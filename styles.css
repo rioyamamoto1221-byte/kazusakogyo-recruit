@@ -1,654 +1,241 @@
-:root {
-  --green: #0a8f2d;
-  --green-dark: #057024;
-  --orange: #ee6b1d;
-  --ink: #121212;
-  --muted: #5c645f;
-  --line: #e4e7e3;
-  --soft: #f7f9f6;
-  --paper: #ffffff;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  color: var(--ink);
-  background: var(--paper);
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
-  letter-spacing: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
-  padding: 0 32px;
-  background: rgba(255, 255, 255, 0.94);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(12px);
-}
-
-.brand {
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.nav-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: 0 20px;
-  color: #fff;
-  background: var(--orange);
-  border-radius: 4px;
-}
-
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(320px, 0.92fr) minmax(420px, 1.08fr);
-  min-height: 620px;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero::after {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-  background: linear-gradient(90deg, #fff 0%, #fff 37%, rgba(255, 255, 255, 0.72) 49%, rgba(255, 255, 255, 0) 66%);
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 1;
-  align-self: center;
-  padding: 58px 0 50px 32px;
-}
-
-.hero h1 {
-  max-width: 620px;
-  margin: 0 0 22px;
-  font-size: clamp(42px, 7vw, 72px);
-  line-height: 1.08;
-  font-weight: 950;
-}
-
-.hero h1 span {
-  color: var(--green);
-}
-
-.hero-copy > p {
-  max-width: 560px;
-  margin: 0 0 22px;
-  font-size: 20px;
-  line-height: 1.75;
-  font-weight: 800;
-}
-
-.hero-media {
-  min-height: 620px;
-  background-image: url("assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.badges {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
-  gap: 14px;
-  max-width: 690px;
-  margin: 24px 32px 24px 0;
-}
-
-.badges div {
-  display: grid;
-  align-items: center;
-  min-height: 74px;
-  padding: 12px 14px 12px 52px;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid #d8ded6;
-  border-radius: 7px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-.badges div::before {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-left: -40px;
-  color: var(--green);
-  font-size: 24px;
-  content: "◆";
-}
-
-.badges div:nth-child(2)::before {
-  content: "¥";
-  color: #111;
-  border: 2px solid #111;
-  border-radius: 50%;
-  font-size: 20px;
-  font-weight: 900;
-}
-
-.badges div:nth-child(3)::before {
-  content: "▮";
-  color: var(--green);
-}
-
-.badges div:nth-child(4)::before {
-  content: "❄";
-}
-
-.badges strong {
-  font-size: 16px;
-  line-height: 1.35;
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 230px;
-  min-height: 60px;
-  padding: 0 28px;
-  border-radius: 6px;
-  font-size: 18px;
-  font-weight: 900;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
-
-.btn::before {
-  margin-right: 10px;
-  font-size: 21px;
-  font-weight: 900;
-}
-
-.line {
-  color: #fff;
-  background: linear-gradient(180deg, #11b43b, #068d29);
-}
-
-.line::before {
-  content: "LINE";
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  color: var(--green);
-  background: #fff;
-  border-radius: 50%;
-  font-size: 10px;
-}
-
-.phone {
-  color: #24160d;
-  background: #fff;
-  border: 2px solid #9b5a35;
-}
-
-.phone::before {
-  content: "☎";
-}
-
-.mini-note {
-  margin-top: 10px;
-  padding-left: 78px;
-  color: #6c726e;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.section {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 42px 28px;
-  border-bottom: 1px solid var(--line);
-}
-
-.section h2 {
-  position: relative;
-  margin: 0 0 28px;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.35;
-  font-weight: 950;
-}
-
-.section h2::after {
-  display: block;
-  width: 42px;
-  height: 3px;
-  margin: 10px auto 0;
-  content: "";
-  background: var(--green);
-}
-
-.intro {
-  padding-top: 36px;
-}
-
-.intro p {
-  max-width: 650px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.9;
-  font-weight: 700;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-figure {
-  margin: 0;
-}
-
-.photo-grid img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1.18 / 1;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-figcaption {
-  margin-top: 12px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 900;
-}
-
-.reason-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.reason-grid article {
-  min-height: 210px;
-  padding: 26px 18px 22px;
-  text-align: center;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
-}
-
-.icon {
-  display: grid;
-  place-items: center;
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 18px;
-  color: var(--green);
-  background: #fff;
-  border: 3px solid var(--green);
-  border-radius: 50%;
-  font-size: 35px;
-}
-
-.reason-grid h3,
-.timeline h3 {
-  margin: 0 0 10px;
-  font-size: 17px;
-  line-height: 1.35;
-  font-weight: 950;
-}
-
-.reason-grid p,
-.timeline p {
-  margin: 0;
-  color: #343a36;
-  font-size: 13px;
-  line-height: 1.75;
-  font-weight: 700;
-}
-
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  counter-reset: step;
-}
-
-.timeline article {
-  position: relative;
-  text-align: center;
-}
-
-.timeline article:not(:last-child)::after {
-  position: absolute;
-  top: 60px;
-  right: -25px;
-  color: #777;
-  font-size: 42px;
-  content: "→";
-}
-
-.timeline span {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin: 0 auto -12px;
-  color: #fff;
-  background: var(--green);
-  border-radius: 50%;
-  font-weight: 900;
-}
-
-.work-icon {
-  display: grid;
-  place-items: center;
-  width: 116px;
-  height: 116px;
-  margin: 0 auto 16px;
-  color: #151515;
-  background: linear-gradient(180deg, #f8faf7, #eef3ee);
-  border: 1px solid #e1e7df;
-  border-radius: 50%;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
-  font-size: 46px;
-  font-weight: 900;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-}
-
-.requirements-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 26px;
-  align-items: stretch;
-}
-
-dl {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-}
-
-dl div {
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  min-height: 52px;
-  border-bottom: 1px solid var(--line);
-}
-
-dl div:last-child {
-  border-bottom: 0;
-}
-
-dt,
-dd {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 13px 18px;
-  font-size: 15px;
-  line-height: 1.55;
-  font-weight: 800;
-}
-
-dt {
-  justify-content: center;
-  color: var(--green);
-  background: #eef8f1;
-}
-
-.requirements img {
-  width: 100%;
-  height: 100%;
-  min-height: 330px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.faq {
-  padding-bottom: 28px;
-}
-
-details {
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-}
-
-details + details {
-  margin-top: 8px;
-}
-
-summary {
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  padding: 0 18px;
-  list-style: none;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 900;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-  margin-left: auto;
-  color: #555;
-  content: "⌄";
-}
-
-details[open] summary::after {
-  content: "⌃";
-}
-
-summary span,
-.faq p span {
-  display: inline-grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 26px;
-  height: 26px;
-  margin-right: 10px;
-  color: #fff;
-  background: var(--green);
-  border-radius: 50%;
-  font-size: 15px;
-  font-weight: 950;
-}
-
-.faq p {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0 18px 14px;
-  color: #333;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.faq p span {
-  background: #111;
-}
-
-.bottom-cta {
-  padding: 42px 28px 36px;
-  color: #fff;
-  text-align: center;
-  background:
-    linear-gradient(rgba(15, 20, 20, 0.88), rgba(15, 20, 20, 0.9)),
-    url("assets/hero.jpg") center / cover;
-}
-
-.bottom-cta h2 {
-  margin: 0 0 8px;
-  font-size: 32px;
-  line-height: 1.35;
-  font-weight: 950;
-}
-
-.bottom-cta p {
-  margin: 0 0 22px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.bottom-cta .cta-row {
-  justify-content: center;
-}
-
-.bottom-cta .company {
-  margin: 26px 0 0;
-  font-size: 17px;
-  opacity: 0.9;
-}
-
-@media (max-width: 820px) {
-  .site-header {
-    align-items: flex-start;
-    min-height: auto;
-    padding: 14px 18px;
-  }
-
-  .brand {
-    font-size: 18px;
-  }
-
-  .nav a:not(.nav-cta) {
-    display: none;
-  }
-
-  .nav {
-    gap: 0;
-  }
-
-  .nav-cta {
-    min-height: 36px;
-    padding: 0 12px;
-    font-size: 12px;
-  }
-
-  .hero {
-    display: block;
-    min-height: auto;
-    background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.78)),
-      url("assets/hero.jpg") center top / cover;
-  }
-
-  .hero::after,
-  .hero-media {
-    display: none;
-  }
-
-  .hero-copy {
-    padding: 44px 18px 34px;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .hero-copy > p {
-    font-size: 17px;
-  }
-
-  .badges,
-  .photo-grid,
-  .reason-grid,
-  .timeline,
-  .requirements-body {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .badges {
-    margin-right: 0;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .mini-note {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .timeline article:not(:last-child)::after {
-    display: none;
-  }
-
-  .requirements-body {
-    gap: 18px;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero h1 {
-    font-size: 38px;
-  }
-
-  .badges,
-  .photo-grid,
-  .reason-grid,
-  .timeline,
-  .requirements-body {
-    grid-template-columns: 1fr;
-  }
-
-  .section {
-    padding: 36px 16px;
-  }
-
-  .section h2 {
-    font-size: 24px;
-  }
-
-  dl div {
-    grid-template-columns: 96px 1fr;
-  }
-
-  dt,
-  dd {
-    padding: 12px;
-    font-size: 13px;
-  }
-
-  .requirements img {
-    min-height: 240px;
-  }
-}
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>上総工業有限会社 採用サイト</title>
+    <meta name="description" content="北海道北見市の上総工業有限会社 採用サイト。未経験から年収400万円以上を目指せる舗装工事スタッフを募集しています。">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">上総工業有限会社</a>
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#about">仕事内容</a>
+        <a href="#requirements">募集要項</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="#apply">応募・相談する</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">未経験から年収400万円以上を目指せる舗装工事</p>
+          <h1>北見で、<br>ちゃんと<span>稼げる</span><br>現場仕事を。</h1>
+          <p>月収40万円超も可能。北見エリア中心の道路補修・アスファルト修繕。見て盗めではなく、先輩が一つずつ教えます。</p>
+          <div class="badges" aria-label="待遇の特徴">
+            <div><strong>未経験歓迎</strong></div>
+            <div><strong>月給24万円〜30万円</strong></div>
+            <div><strong>年収400万円以上可</strong></div>
+            <div><strong>日曜休み・有給相談OK</strong></div>
+          </div>
+          <div class="cta-row" id="apply">
+            <a class="btn line" href="https://lin.ee/Xdnpf19">LINEで応募する</a>
+            <a class="btn phone" href="tel:0157612212">電話で相談する</a>
+          </div>
+          <p class="mini-note">見学・相談だけでもOK</p>
+        </div>
+        <div class="hero-media" aria-hidden="true"></div>
+      </section>
+
+      <section class="section intro" id="about">
+        <h2>上総工業について</h2>
+        <p>上総工業有限会社は、北海道北見市を中心に、道路補修や個人宅のアスファルト修繕などを行う土木・舗装工事会社です。地域インフラを守る安定した仕事で、年間を通じて仕事量があります。</p>
+      </section>
+
+      <section class="section job-summary">
+        <h2>未経験でもちゃんと稼げます</h2>
+        <div class="summary-grid">
+          <article>
+            <strong>月収40万円超可能</strong>
+            <p>月給24万円〜30万円に、残業代・出張手当・各種手当が加わります。</p>
+          </article>
+          <article>
+            <strong>年収400万円以上可能</strong>
+            <p>未経験スタートの先輩も達成中。長く続けるほど技術と収入が伸ばせます。</p>
+          </article>
+          <article>
+            <strong>日曜は必ず休み</strong>
+            <p>週休2日制で、有給相談もOK。家族との時間も守りやすい働き方です。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section work-detail">
+        <h2>仕事内容</h2>
+        <div class="detail-layout">
+          <div>
+            <p class="section-lead">北見エリアの道路を守る、舗装工事がメインです。1日の作業をしっかり決めてから動くため、初めての方も迷わず作業に入れます。</p>
+            <ul class="check-list">
+              <li>道路の補修</li>
+              <li>個人宅のアスファルト修繕</li>
+              <li>道具・資材の準備、運搬</li>
+              <li>2t・4tトラックでの運転業務</li>
+            </ul>
+          </div>
+          <div class="note-box">
+            <strong>雨天で作業が短くなっても安心</strong>
+            <p>月給制のため、天候により作業時間が短くなっても給与は減りません。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>実際の仕事風景</h2>
+        <div class="photo-grid">
+          <figure>
+            <img src="assets/work-1.jpg" alt="重機と作業員が舗装面を整えている様子">
+            <figcaption>舗装・敷きならし</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/work-2.jpg" alt="転圧機とほうきを使って舗装面を仕上げている様子">
+            <figcaption>仕上げ・清掃作業</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/work-3.jpg" alt="舗装機械の周りで複数人が作業している様子">
+            <figcaption>チームでの舗装施工</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/work-4.jpg" alt="作業員が構造物の周辺を施工している様子">
+            <figcaption>構造物まわりの施工</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>上総工業で働く理由</h2>
+        <div class="reason-grid">
+          <article>
+            <div class="icon">💰</div>
+            <h3>月給制で収入が安定</h3>
+            <p>月給制なので、雨天で作業が短くなっても給与は減りません。</p>
+          </article>
+          <article>
+            <div class="icon">🤝</div>
+            <h3>未経験でも始めやすい</h3>
+            <p>見て盗めではなく、先輩が作業の流れから教えます。</p>
+          </article>
+          <article>
+            <div class="icon">📍</div>
+            <h3>転勤なし</h3>
+            <p>北見エリア中心。地元で腰を据えて働きたい方に向いています。</p>
+          </article>
+          <article>
+            <div class="icon">❄</div>
+            <h3>冬期出張で収入UP</h3>
+            <p>1〜3月はさいたま市方面の出張あり。しっかり稼ぎたい人に向いています。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>1日の流れ</h2>
+        <div class="timeline">
+          <article>
+            <span>1</span>
+            <div class="work-icon" aria-hidden="true">📋</div>
+            <h3>準備・運搬</h3>
+            <p>道具や資材を準備し、現場へ運びます。最初はここからスタート。</p>
+          </article>
+          <article>
+            <span>2</span>
+            <div class="work-icon" aria-hidden="true">🚜</div>
+            <h3>現場作業を習得</h3>
+            <p>先輩の指導のもと、補修や整地などを少しずつ覚えます。</p>
+          </article>
+          <article>
+            <span>3</span>
+            <div class="work-icon" aria-hidden="true">🛣️</div>
+            <h3>運転業務も担当</h3>
+            <p>慣れてきたら、2t・4tトラックでの運転業務も担当します。</p>
+          </article>
+          <article>
+            <span>4</span>
+            <div class="work-icon" aria-hidden="true">🧹</div>
+            <h3>チームで完成</h3>
+            <p>舗装・土木工事をチームで仕上げ、片付けまで行います。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section requirements" id="requirements">
+        <h2>募集要項</h2>
+        <div class="requirements-body">
+          <dl>
+            <div><dt>職種</dt><dd>土木・舗装作業スタッフ</dd></div>
+            <div><dt>勤務地</dt><dd>〒090-0052 北海道北見市北進町5丁目4-56<br>転勤なし／マイカー・バイク通勤可</dd></div>
+            <div><dt>アクセス</dt><dd>「高栄西町1丁目」バス停より徒歩2分／西北見駅より車5分</dd></div>
+            <div><dt>勤務時間</dt><dd>8:00〜17:00（実働7時間30分／休憩90分）<br>月平均残業20時間</dd></div>
+            <div><dt>給与</dt><dd>月給240,000円〜300,000円<br>月収40万円超・年収400万円以上も可能</dd></div>
+            <div><dt>手当</dt><dd>交通費、残業代全額、出張手当、通勤・皆勤・家族手当（月10,000円〜）</dd></div>
+            <div><dt>休日</dt><dd>週休2日制（日曜＋会社カレンダー）／年間休日105日</dd></div>
+            <div><dt>休暇</dt><dd>GW、お盆、年末年始、有給休暇</dd></div>
+            <div><dt>必須</dt><dd>普通自動車運転免許（AT限定不可）</dd></div>
+            <div><dt>歓迎</dt><dd>中型自動車免許／土木・舗装工事経験／異業種からの転職／ブランクOK／第二新卒</dd></div>
+          </dl>
+          <img src="assets/requirements.jpg" alt="複数の作業員が構造物まわりで施工している様子">
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>求めている人材</h2>
+        <div class="person-grid">
+          <article>
+            <h3>こんな方を歓迎します</h3>
+            <ul class="check-list">
+              <li>体を動かす仕事がしたい方</li>
+              <li>安定した収入を長く得たい方</li>
+              <li>チームで助け合いながら働きたい方</li>
+              <li>未経験からしっかり稼ぎたい方</li>
+            </ul>
+          </article>
+          <article>
+            <h3>待遇・福利厚生</h3>
+            <ul class="check-list">
+              <li>昇給年1回（前年度実績：月11,500円〜）</li>
+              <li>賞与年2回（前年度実績：11万円〜）</li>
+              <li>退職金共済加入、資格取得支援制度あり</li>
+              <li>社会保険完備、無料駐車場あり</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workplace">
+        <h2>職場環境</h2>
+        <p>創業以来、北見エリアを中心に土木・舗装工事で実績を積んできた会社です。スタッフは幅広い年代が在籍しており、年齢の壁なく和気あいあいとした雰囲気。代表との距離も近く、仕事や働き方の相談も気軽にできます。</p>
+      </section>
+
+      <section class="section faq" id="faq">
+        <h2>よくある質問</h2>
+        <details open>
+          <summary><span>Q</span>未経験でも大丈夫ですか？</summary>
+          <p><span>A</span>はい。道具・資材の準備や運搬から始め、先輩の指導のもと少しずつ覚えられます。</p>
+        </details>
+        <details>
+          <summary><span>Q</span>体力に自信がないと厳しいですか？</summary>
+          <p><span>A</span>体を動かす仕事ですが、最初からすべてを任せるわけではありません。</p>
+        </details>
+        <details>
+          <summary><span>Q</span>冬期出張はありますか？</summary>
+          <p><span>A</span>1〜3月にさいたま市方面への出張があります。出張手当は別途支給します。</p>
+        </details>
+        <details>
+          <summary><span>Q</span>応募前に話だけ聞けますか？</summary>
+          <p><span>A</span>可能です。仕事内容や働き方の相談、見学希望だけでも歓迎です。</p>
+        </details>
+      </section>
+
+      <section class="bottom-cta">
+        <h2>まずは話を聞いてみませんか？</h2>
+        <p>応募前の相談、仕事内容の質問、見学希望も歓迎しています。</p>
+        <div class="cta-row">
+          <a class="btn line" href="https://lin.ee/Xdnpf19">LINEで応募する</a>
+          <a class="btn phone" href="tel:0157612212">電話で相談する</a>
+        </div>
+        <p class="company">上総工業有限会社</p>
+      </section>
+    </main>
+  </body>
+</html>
